@@ -1,0 +1,1 @@
+INSERT INTO pipeline_container (id, name, case_sensitive_name, description, fk_organisation_id) VALUES ('478225', 'demo', 'DEMO', NULL, '50702') using metastore;
