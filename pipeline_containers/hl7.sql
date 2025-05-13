@@ -1,0 +1,9 @@
+INSERT INTO pipeline_container (id, name, case_sensitive_name, description, fk_organisation_id) VALUES ('807391', 'hl7', 'HL7', NULL, '50702') using metastore;
+INSERT INTO pipeline_relation (id, name, case_sensitive_name, description, fk_pipeline_container_id) VALUES ('807392', 'pipe3', 'pipe3', NULL, '807391') using metastore;
+INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('807495', 'projection_1', 'projection_1', NULL, '807392', 'PROJECTION', 'sqltable_0') using metastore;
+INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('807463', 'sqltable_0', 'sqltable_0', NULL, '807392', 'SQLTable', NULL) using metastore;
+INSERT INTO pipeline_sqltable (id, source_tables, sql_query) VALUES ('807463', NULL, 'select distinct *,  a.telephone_number.*
+from (
+    SELECT evn.event_occurred.time.dtm,  evn.event_reason_code.is.*,  evn.operator_id.id_number.*,  evn.recorded_date_time.time.dtm,  msh.application_acknowledgment_type.id.*,  msh.date_time_of_message.time.dtm,  msh.encoding_characters.st.*,  msh.field_separator.st.*,  msh.message_control_id.st.*,  msh.message_type.message_code.*,  msh.processing_id.processing_id.*,  msh.sending_application.namespace_id.*,  msh.version_id.version_id.*,  nk1.address.city.*,  nk1.address.country.*,  nk1.address.state_or_province.*,  nk1.address.street_address.*,  nk1.name.family_name.*,  nk1.name.given_name.*,  nk1.name.second_and_further_given_names_or_initials_thereof.*,  nk1.relationship.identifier.*,  nk1.set_id_nk1.si.*,  pid.administrative_sex.is.*,  pid.marital_status.identifier.*,  pid.patient_address.city.*,  pid.patient_identifier_list.assigning_authority.*,  pid.patient_name.family_name.*,  pid.patient_name.given_name.*,  pid.set_id_pid.si.*,  explode(pid.phone_number_home) a
+    FROM hl7_v3.hl7_data_v3
+)') using metastore;
