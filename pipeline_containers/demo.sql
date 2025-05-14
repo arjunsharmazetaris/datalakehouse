@@ -1,1 +1,10 @@
-INSERT INTO pipeline_container (id, name, case_sensitive_name, description, fk_organisation_id) VALUES ('478225', 'demo', 'DEMO', NULL, '50702') using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('1516239', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('956023', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('956026', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('956001', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('956005', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('956018', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('956011', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('478297', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('478290', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('36318', '', '', '') using metastore;
