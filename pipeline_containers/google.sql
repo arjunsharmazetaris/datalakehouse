@@ -6,9 +6,9 @@ INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeli
 INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('272062', 'azure_mssql_nation', 'azure_mssql_nation', NULL, '268250', 'DATASOURCE', NULL) using metastore;
 INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('272066', 'join_2', 'join_2', NULL, '268250', 'JOIN', NULL) using metastore;
 INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('272072', 'join_1', 'join_1', NULL, '268250', 'JOIN', NULL) using metastore;
-INSERT INTO pipeline_datasource (id, datasource_table) VALUES ('272059', '`AZURE_MSSQL`.`region`') using metastore;
-INSERT INTO pipeline_datasource (id, datasource_table) VALUES ('272036', '`BIGQUERY`.`gdelt`') using metastore;
 INSERT INTO pipeline_datasource (id, datasource_table) VALUES ('272062', '`AZURE_MSSQL`.`nation`') using metastore;
+INSERT INTO pipeline_datasource (id, datasource_table) VALUES ('272036', '`BIGQUERY`.`gdelt`') using metastore;
+INSERT INTO pipeline_datasource (id, datasource_table) VALUES ('272059', '`AZURE_MSSQL`.`region`') using metastore;
 INSERT INTO pipeline_join (id, join_tables, join_predicate, filter_expression, order_by) VALUES ('272066', 'azure_mssql_region,azure_mssql_nation', '(azure_mssql_region.r_regionkey = azure_mssql_nation.n_regionkey)', NULL, NULL) using metastore;
 INSERT INTO pipeline_join (id, join_tables, join_predicate, filter_expression, order_by) VALUES ('272072', 'projection_0,join_2', '(projection_0.Actor1CountryCode(+) = join_2.azure_mssql_nation_n_name)', NULL, NULL) using metastore;
 INSERT INTO pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('272061', 'r_name', NULL, 'string', NULL, '272059') using metastore;
