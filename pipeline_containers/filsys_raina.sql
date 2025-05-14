@@ -1,0 +1,15 @@
+INSERT INTO pipeline_container (id, name, case_sensitive_name, description, fk_organisation_id) VALUES ('808268', 'filsys_raina', 'FILSYS_RAINA', NULL, '50702') using metastore;
+INSERT INTO pipeline_relation (id, name, case_sensitive_name, description, fk_pipeline_container_id) VALUES ('808269', 'cleanup', 'cleanup', NULL, '808268') using metastore;
+INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('808275', 'projection_0', 'projection_0', NULL, '808269', 'PROJECTION', 'filesource_info_fs_raina') using metastore;
+INSERT INTO pipeline_node (id, name, case_sensitive_name, description, fk_pipeline_relation_id, pipeline_type, sources) VALUES ('808270', 'filesource_info_fs_raina', 'filesource_info_fs_raina', NULL, '808269', 'DATASOURCE', 'FileSOurce_Info.fs_raina') using metastore;
+INSERT INTO pipeline_datasource (id, datasource_table) VALUES ('808270', '`FileSOurce_Info`.`fs_raina`') using metastore;
+INSERT INTO pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('808274', 'Last Modified', NULL, 'string', NULL, '808270') using metastore;
+INSERT INTO pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('808273', 'File Size (bytes)', NULL, 'string', NULL, '808270') using metastore;
+INSERT INTO pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('808272', 'File Name', NULL, 'string', NULL, '808270') using metastore;
+INSERT INTO pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('808271', 'Directory', NULL, 'string', NULL, '808270') using metastore;
+INSERT INTO pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('808279', 'Last Modified', 'LastModified', 'string', NULL, '808275') using metastore;
+INSERT INTO pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('808278', 'File Size (bytes)', 'FileSize', 'string', NULL, '808275') using metastore;
+INSERT INTO pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('808277', 'File Name', 'FileName', 'string', NULL, '808275') using metastore;
+INSERT INTO pipeline_node_schema (id, column_name, column_alias, data_type, sql_expression, fk_pipeline_node_id) VALUES ('808276', 'Directory', NULL, 'string', NULL, '808275') using metastore;
+INSERT INTO pipeline_projection (id, filter_expression, windows_spec, order_by) VALUES ('808275', NULL, NULL, NULL) using metastore;
+INSERT INTO pipeline_coordinates (id, coordinates, fk_pipeline_relation_id) VALUES ('3f92a7a1-cb81-44b1-b4b8-df53a5139cef', '{"positions":[{"name":"filesource_info_fs_raina","type":"DataSource","xCord":"112px","yCord":"98px"},{"name":"projection_0","type":"Projection","xCord":"525px","yCord":"151px"}],"connections":[{"source":"filesource_info_fs_raina","target":"projection_0","targetType":0}]}', '808269') using metastore;
